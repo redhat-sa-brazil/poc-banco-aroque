@@ -1,0 +1,69 @@
+---
+- hosts: all
+  remote_user: root
+
+  tasks:
+  - name: Setting user
+    user:
+      name: manutencao
+      password: {{ passphrase }}
+      become: yes
+      become_user: root
+
+  - name: Create /manutencao directory
+    file: 
+      path: /manutencao
+      owner: manutencao
+      mode: 0644 
+
+  - name: Installing vim
+    yum:
+      name: vim
+      state: latest
+      update_cache: yes
+
+  - name: Installing telnet
+    yum:
+      name: telnet
+      state: latest
+      update_cache: yes
+
+  - name: Installing nc
+    yum:
+      name: nc
+      state: latest
+      update_cache: yes
+
+  - name: Installing net-tools
+    yum:
+      name: net-tools
+      state: latest
+      update_cache: yes
+
+  - name: Installing bind-utils
+    yum:
+      name: bind-utils
+      state: latest
+      update_cache: yes
+
+  - name: Installing yum-utils
+    yum:
+      name: yum-utils
+      state: latest
+      update_cache: yes
+
+  - name: Making SELinux permissive
+    selinux:
+      state: permissive
+
+  - name: Disabling cups
+    service:
+      name: cups
+      state: stopped
+      enabled: no
+
+  - name: Enabling sar
+    service:
+      name: sar
+      state: restarted
+      enabled: yes
