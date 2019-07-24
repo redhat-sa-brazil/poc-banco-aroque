@@ -12,6 +12,7 @@
   - name: Create /manutencao directory
     file: 
       path: /manutencao
+      state: directory
       owner: manutencao
       mode: 0644 
 
