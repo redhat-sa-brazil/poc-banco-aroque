@@ -59,7 +59,7 @@
 
   - name: Disabling cups
     service:
-      name: cups
+      name: cupsd
       state: stopped
       enabled: no
 
