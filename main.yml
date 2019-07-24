@@ -6,7 +6,7 @@
   - name: Setting user
     user:
       name: manutencao
-      password: {{ passphrase }}
+  #   password: "{{ passphrase }}"
       become: yes
       become_user: root
 
