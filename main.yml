@@ -57,14 +57,14 @@
       policy: targeted
       state: permissive
 
-  - name: Disabling cups
-    service:
-      name: cupsd
-      state: stopped
-      enabled: no
+ # - name: Disabling cups
+ #   service:
+ #     name: cups.service
+ #     state: stopped
+ #     enabled: no
 
   - name: Enabling sar
     service:
-      name: sar
+      name: sysstat
       state: restarted
       enabled: yes
