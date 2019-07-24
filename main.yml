@@ -7,7 +7,7 @@
     user:
       name: manutencao
   #   password: "{{ passphrase }}"
-      group: sudoers
+      group: root
 
   - name: Create /manutencao directory
     file: 
