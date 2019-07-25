@@ -6,7 +6,7 @@
   - name: Setting user
     user:
       name: manutencao
-  #   password: "{{ passphrase }}"
+      password: $6$1wJK2NHwFI4leK.e$DLRD0WezhuHN/nR91u/JIFcSRRbuvwaRovWKdX04UKQfeSYTs9T2UozPiL4tZalq.dkN97YmLb88.whFdy6nl/
       group: root
 
   - name: Create /manutencao directory
@@ -14,7 +14,7 @@
       path: /manutencao
       state: directory
       owner: manutencao
-      mode: 0644
+      mode: 0700
 
   - name: Installing vim
     yum:
